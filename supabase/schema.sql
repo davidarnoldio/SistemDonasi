@@ -1,0 +1,13 @@
+-- =============================================================================
+-- DEPRECATED — Schema ini sudah tidak dipakai.
+-- Pakai migrasi berversi di: supabase/migrations/
+--
+-- Perubahan utama dari versi ini:
+--   - Insert donasi + upload bukti Pindah ke Edge Function (service_role).
+--   - Tidak perlu policy insert/update untuk anon.
+--   - No. transaksi & kode unik di-generate server-side.
+--   - Ditambah kolom rejection_reason dan verified_at.
+--   - Schema ini masih bisa dipakai sebagai reference manual.
+-- =============================================================================
+
+-- ... (isi schema lama dihapus; lihat migrations/20261103000001_init.sql) ...

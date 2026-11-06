@@ -1,0 +1,23 @@
+# Dependensi dan hasil build
+node_modules
+dist
+
+# Secret lokal. Hanya .env.example yang boleh masuk repo.
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+
+# Log dan file sistem
+*.log
+.DS_Store
+Thumbs.db
+.chrome-temp
+scratch
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea

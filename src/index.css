@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+  --text-*: initial;
+
+  /* ---------------------------------------------------------------------------
+   * Warna (KasihBersama Design System Redesain)
+   * ------------------------------------------------------------------------- */
+  --color-white: #FFFFFF;
+  --color-primary: #346739;
+  /* Primary / Forest Green: tombol utama, badge aktif, aksen */
+  --color-primary-hover: #2B552F;
+  --color-primary-soft: #EAF2E6;
+  /* Soft Mint / Pale Green: chip terpilih, banner, badge */
+  --color-sage: #79AE6F;
+  /* Primary / Sage Green */
+  --color-mint: #9FCB98;
+  /* Muted / Soft Mint Green */
+  --color-cream: #F2EDC2;
+  /* Accent / Warm Cream */
+  --color-cream-soft: #FDFBF0;
+  /* Warm off-white background */
+  --color-modal-bg: #FDFCF4;
+  /* Modal warm background */
+  --color-panel-sage: #C8D9BF;
+  /* Sage panel for login */
+  --color-accent: #E9C46A;
+  /* Accent / Gold: CTA, sparkle, banner aksen */
+  --color-accent-soft: #FEFCE8;
+  --color-ink: #111827;
+  /* Text / Ink: judul dan teks utama */
+  --color-muted: #6B7280;
+  /* teks sekunder, placeholder, ikon */
+  --color-line: #E5E7EB;
+  /* border, garis pemisah, track progress */
+  --color-surface: #F3F4F6;
+  /* Light BG: tombol close, kartu abu-abu, prefix input */
+  --color-dark-bg: #0F172A;
+  --color-dark-surface: #1E293B;
+
+  /* Catatan peringatan di Langkah 3 dan chip status "menunggu" */
+  --color-warning-soft: #FFFBEB;
+  --color-warning-line: #FDE68A;
+  --color-warning-ink: #92400E;
+
+  /* Dari halaman admin: tombol/label "tolak", status ditolak */
+  --color-danger: #B42318;
+  --color-danger-soft: #FEF3F2;
+
+  /* Gradien thumbnail kampanye */
+  --color-thumb-from: #79AE6F;
+  --color-thumb-to: #346739;
+
+  /* Wordmark logo "Kasih" + "Bersama" */
+  --color-logo-green: #346739;
+  --color-logo-ink: #0B1426;
+
+  /* Latar gelap di belakang modal */
+  --color-overlay: rgb(17 24 39 / 0.5);
+
+  /* ---------------------------------------------------------------------------
+   * Font. Bobot bawaan Tailwind sudah sama dengan Figma:
+   * normal 400, medium 500, semibold 600, bold 700, extrabold 800.
+   * Dimuat dari paket @fontsource-variable (self-host) di src/main.jsx.
+   * ------------------------------------------------------------------------- */
+  --font-sans: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---------------------------------------------------------------------------
+   * Skala teks (px) dan pemakaian utamanya di Figma
+   *  10  logo bank, badge status admin
+   *  11  "Donasi untuk", label rekening, tombol Salin
+   *  12  "Langkah X dari 4", helper, counter 0 / 200, badge status
+   *  13  label bagian, judul kampanye di kartu, baris ringkasan, tab
+   *  14  checkbox, textarea, subteks
+   *  15  chip nominal, teks isi (Body)
+   *  16  tombol, nomor rekening, prefix "Rp"
+   *  18  nominal di kartu kampanye
+   *  20  nilai input nominal, Heading 3
+   *  22  judul modal
+   *  24  total di banner
+   *  26  "Donasi Berhasil!"
+   *  32  Heading 1 (landing)
+   *  48  Display (landing)
+   * ------------------------------------------------------------------------- */
+  --text-10: 10px;
+  --text-11: 11px;
+  --text-12: 12px;
+  --text-13: 13px;
+  --text-14: 14px;
+  --text-15: 15px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-22: 22px;
+  --text-24: 24px;
+  --text-26: 26px;
+  --text-32: 32px;
+  --text-48: 48px;
+
+  /* ---------------------------------------------------------------------------
+   * Radius (px)
+   *  xs   6   kotak logo bank, checkbox
+   *  sm   8   tombol Salin
+   *  md  10   thumbnail, tab aktif, catatan peringatan
+   *  lg  12   chip, input, textarea, tombol, banner, baris, area upload
+   *  xl  14   kartu ringkasan kampanye
+   *  2xl 16   kartu ringkasan transaksi, area QR
+   *  3xl 24   modal
+   *  Bentuk pil (tombol close, badge, segmen progress): rounded-full
+   * ------------------------------------------------------------------------- */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+
+  /* ---------------------------------------------------------------------------
+   * Shadow. Blur CSS = 2 x stdDeviation di Figma.
+   * ------------------------------------------------------------------------- */
+  --shadow-modal: 0 8px 24px rgb(0 0 0 / 0.14);
+  --shadow-tab: 0 2px 6px rgb(0 0 0 / 0.078);
+
+  /* ---------------------------------------------------------------------------
+   * Ukuran. Border: 1px bawaan, 2px untuk chip terpilih, input fokus, dan
+   * garis putus-putus area upload / QR (dash 6, jeda 4).
+   * ------------------------------------------------------------------------- */
+  /* Responsif: di bawah 520px modal memenuhi layar dengan margin 16px */
+  --breakpoint-modal: 520px;
+
+  /* Modal */
+  --spacing-modal: 480px;
+  /* lebar modal. Konten = 480 - (2 x 28) = 424px */
+  --spacing-modal-pad: 28px;
+  /* padding dalam modal */
+  --spacing-modal-gutter: 16px;
+  /* margin modal di layar < 520px */
+
+  /* Header */
+  --spacing-close: 32px;
+  /* tombol close 32x32 */
+  --spacing-close-icon: 16px;
+  /* ikon X */
+
+  /* Progress: 4 segmen, tiap segmen 101,5px = (424 - 3 x 6) / 4 */
+  --spacing-progress: 4px;
+  /* tinggi segmen */
+  --spacing-progress-gap: 6px;
+  /* jarak antar segmen */
+
+  /* Kartu ringkasan kampanye */
+  --spacing-summary: 80px;
+  /* tinggi kartu */
+  --spacing-thumb: 56px;
+  /* thumbnail 56x56 */
+
+  /* Langkah 1: grid chip 3 kolom */
+  --spacing-chip-gap: 10px;
+
+  /* Kontrol form */
+  --spacing-control: 52px;
+  /* tinggi tombol dan input */
+  --spacing-textarea: 130px;
+  /* tinggi textarea doa & dukungan */
+  --spacing-checkbox: 22px;
+  /* kotak checkbox 22x22 */
+
+  /* Langkah 3: kotak logo bank 48x28 */
+  --spacing-logo-w: 48px;
+  --spacing-logo-h: 28px;
+
+  /* Animasi buka modal (tidak ada di Figma). Dimatikan untuk pengguna yang
+     memilih "kurangi gerakan" lewat varian motion-reduce:animate-none. */
+  --animate-modal-in: modal-in 180ms ease-out;
+  --animate-overlay-in: overlay-in 180ms ease-out;
+
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.98);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes overlay-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Gradien thumbnail kampanye 56x56. Sudut 126,87 deg dan titik akhir 71,43%
+   setara dengan vektor gradien di Figma. */
+@utility bg-thumb {
+  background-image: linear-gradient(126.87deg,
+      var(--color-thumb-from) 0%,
+      var(--color-thumb-to) 71.43%);
+}
+
+@layer base {
+  html {
+    /* Figma memakai line-height otomatis (1,26 em untuk Plus Jakarta Sans),
+       sama dengan `normal` di CSS. */
+    line-height: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Mencegah halaman bergeser saat scroll dikunci ketika modal terbuka */
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    background-color: var(--color-cream-soft);
+    color: var(--color-ink);
+  }
+
+  /* Tailwind v4 membuat kursor tombol menjadi default. Kembalikan ke pointer. */
+  button:not(:disabled),
+  [role='button']:not(:disabled),
+  label:has(input[type='checkbox']),
+  label:has(input[type='radio']) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  /* Indikator fokus keyboard untuk semua elemen interaktif */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Input teks menampilkan fokus lewat pembungkusnya (garis 2px hijau).
+     Checkbox dan radio tetap memakai outline di atas. */
+  input:not([type='checkbox'], [type='radio']):focus-visible,
+  textarea:focus-visible {
+    outline: none;
+  }
+}
